@@ -14,6 +14,7 @@ class Song
     @name = name
     @artist = artist
     @genre = genre
+
   end
 
   def self.count
@@ -36,8 +37,21 @@ class Song
         results[genre] = 0
       end
 
-      results[genre]++
+      results[genre] += 1
+    end
 
+     results
+  end
+
+  def self.artist_count
+    results = {}
+
+    @@artists.each do |artists|
+      if results[artists] == nil
+        results[artists] = 0
+      end
+
+      results[artists] += 1
     end
 
      results
